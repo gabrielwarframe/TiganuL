@@ -1,0 +1,1394 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "ajutor",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        }
+      ],
+      "x": 148,
+      "y": 188,
+      "perms": []
+    },
+    {
+      "type": "command",
+      "name": "info",
+      "guid": "2224944a-561a-4fa1-824b-2f31ea37c836",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "5053a44d-4a5e-460a-974d-da0cc07aac7c"
+          ]
+        }
+      ],
+      "x": 149,
+      "y": 325
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "!!cutit",
+          "value": "Hai ca sterg chat-ul pentru tine printul meu.",
+          "inline": "true"
+        },
+        {
+          "name": "!!tebatetiganul",
+          "value": "Nu folosi comanda asta ca superi tiganul si te bate, eu te-am avertizat.",
+          "inline": "true"
+        },
+        {
+          "name": "!!play",
+          "value": "Cat de curand seful meu o sa tin si conecerte da momentan nu merge vocea.",
+          "inline": "true"
+        },
+        {
+          "name": "!!starelatigan",
+          "value": "Imi pui stare seful meu, roman galben ce esti.",
+          "inline": "true"
+        },
+        {
+          "name": "!!link",
+          "value": "Link-ul de la discord!! Nu mai genera roman galben alt link  ca iti iei bataie.",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 345,
+      "y": 182,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "0F7330",
+        "Ajut romanul ca e fraier",
+        "",
+        "Tiganul",
+        "",
+        "",
+        "Ce vrei romanule, de-mi ceri ajutorul. \nNu te descurci in viata asta la nimic.",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "show info",
+      "guid": "5053a44d-4a5e-460a-974d-da0cc07aac7c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2224944a-561a-4fa1-824b-2f31ea37c836"
+        }
+      ],
+      "x": 360,
+      "y": 324,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.DefaultChannel.id}",
+        "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "cutit",
+      "guid": "9f1b76ea-e580-4147-b048-57b94a10b00a",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "4aadcece-3320-4d43-ad53-a61d095c3aa0"
+          ]
+        }
+      ],
+      "x": 135,
+      "y": 459,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "verifichatul",
+      "guid": "4aadcece-3320-4d43-ad53-a61d095c3aa0",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "cutittot",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "eb4966d6-bcd0-42e2-a3f6-a8d20cb1e3ef"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9f1b76ea-e580-4147-b048-57b94a10b00a"
+        }
+      ],
+      "x": 332,
+      "y": 457,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "cutittot",
+        "Number",
+        "temp",
+        "1"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "stergetot",
+      "guid": "eb4966d6-bcd0-42e2-a3f6-a8d20cb1e3ef",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "00e7ca9b-ef94-42cb-af2e-525b2703883e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4aadcece-3320-4d43-ad53-a61d095c3aa0"
+        }
+      ],
+      "x": 524,
+      "y": 456,
+      "rtype": "Channel Action",
+      "rsubtype": "Delete All Messages",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.cutittot}"
+      ],
+      "formnames": [
+        "channelname",
+        "msgcount"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "stiu cine a sters boss",
+      "guid": "00e7ca9b-ef94-42cb-af2e-525b2703883e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "eb4966d6-bcd0-42e2-a3f6-a8d20cb1e3ef"
+        }
+      ],
+      "x": 737,
+      "y": 461,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "<@${dbsVars.CommandAuthor.id}> Bravo romanule ca stergi chat-ul, asa sa faci, cu drag tiganul tau favorit.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "tebatetiganul",
+      "guid": "a9091270-0a9a-48fb-b5d2-072c34b08bb7",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "6cd16c58-ce4a-4ebd-8b14-0af701c952e1"
+          ]
+        }
+      ],
+      "x": 124,
+      "y": 596
+    },
+    {
+      "type": "response",
+      "name": "Tebatetiganul",
+      "guid": "b6113d97-d955-42f5-8a7d-5fae960de105",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6cd16c58-ce4a-4ebd-8b14-0af701c952e1"
+        }
+      ],
+      "x": 584,
+      "y": 602,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "<@${dbsVars.CommandAuthor.id}> Ce ti-am zis sa nu superi tiganul ? De ce ai invocat tiganul sa te bata?",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "AIAYE",
+      "guid": "6cd16c58-ce4a-4ebd-8b14-0af701c952e1",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "b6113d97-d955-42f5-8a7d-5fae960de105"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a9091270-0a9a-48fb-b5d2-072c34b08bb7"
+        }
+      ],
+      "x": 367,
+      "y": 581,
+      "rtype": "Message",
+      "rsubtype": "Send Image",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "https://www.cugetliber.ro/imagini/original/tiganul-1390392531.jpg",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "url",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "play",
+      "guid": "3f143f58-5d06-44af-bb23-de11461c22af",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "417649ef-d460-4e0c-b193-4ff3685afda3"
+          ]
+        }
+      ],
+      "x": 13,
+      "y": 775
+    },
+    {
+      "type": "command",
+      "name": "starelatigan",
+      "guid": "d2be860b-b8bf-4d07-832f-390964146152",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "c38bf6a5-0001-480f-94ce-c7b9dc099d67"
+          ]
+        }
+      ],
+      "x": 23,
+      "y": 1597,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Status la tigan",
+      "guid": "c38bf6a5-0001-480f-94ce-c7b9dc099d67",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3d999c9e-00ab-4c1a-ae0e-8957e30e9fe1"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d2be860b-b8bf-4d07-832f-390964146152"
+        }
+      ],
+      "x": 213,
+      "y": 1581,
+      "rtype": "Bot Action",
+      "rsubtype": "Set Bot Status",
+      "formdata": [
+        "dnd"
+      ],
+      "formnames": [
+        "presencestatus"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "maimulte",
+      "guid": "3d999c9e-00ab-4c1a-ae0e-8957e30e9fe1",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c38bf6a5-0001-480f-94ce-c7b9dc099d67"
+        }
+      ],
+      "x": 385,
+      "y": 1585,
+      "rtype": "Bot Action",
+      "rsubtype": "More Status",
+      "formdata": [
+        "WATCHING",
+        "Is la furat, nu ma deranja.\nDaca ai uitat comenzile romanule da un !ajutor.\nIs tigan pur sange, roman galben ce esti.\n"
+      ],
+      "formnames": [
+        "statusOption",
+        "statusText"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "1",
+      "guid": "417649ef-d460-4e0c-b193-4ff3685afda3",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "song",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2ec6b87c-1831-45e5-8e5b-eee24dd6376a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3f143f58-5d06-44af-bb23-de11461c22af"
+        }
+      ],
+      "x": 173,
+      "y": 767,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "song",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "2",
+      "guid": "2ec6b87c-1831-45e5-8e5b-eee24dd6376a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "4fb81c32-1a34-4599-b6a9-2a707f4e55bf"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "417649ef-d460-4e0c-b193-4ff3685afda3"
+        }
+      ],
+      "x": 334,
+      "y": 777,
+      "rtype": "Message",
+      "rsubtype": "if arguments are none",
+      "formdata": [
+        "🎵**I need a song name!**🎵"
+      ],
+      "formnames": [
+        "mes"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "3",
+      "guid": "4fb81c32-1a34-4599-b6a9-2a707f4e55bf",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "641a7713-4693-4f3a-8a39-0683dac72845"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2ec6b87c-1831-45e5-8e5b-eee24dd6376a"
+        }
+      ],
+      "x": 494,
+      "y": 784,
+      "rtype": "Bot Action",
+      "rsubtype": "Voice Manager",
+      "formdata": [
+        "isAuthorInVC",
+        "4",
+        "13",
+        ""
+      ],
+      "formnames": [
+        "info",
+        "ifTrue",
+        "ifFalse",
+        "volume"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "4",
+      "guid": "641a7713-4693-4f3a-8a39-0683dac72845",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "cf1de6f6-0f77-4438-a382-7436b23abb0d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4fb81c32-1a34-4599-b6a9-2a707f4e55bf"
+        }
+      ],
+      "x": 655,
+      "y": 790,
+      "rtype": "Bot Action",
+      "rsubtype": "Voice Manager",
+      "formdata": [
+        "IsBotPlayingSong",
+        "15",
+        "4",
+        ""
+      ],
+      "formnames": [
+        "info",
+        "ifTrue",
+        "ifFalse",
+        "volume"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "5",
+      "guid": "cf1de6f6-0f77-4438-a382-7436b23abb0d",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "262a5e4f-6296-4901-a8a6-d533dcba4c56"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "641a7713-4693-4f3a-8a39-0683dac72845"
+        }
+      ],
+      "x": 811,
+      "y": 793,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "🎵Caut sefule...🎵",
+        "",
+        "",
+        "",
+        "",
+        "**Caut sefule...** `${tempVars.song}`",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "6",
+      "guid": "262a5e4f-6296-4901-a8a6-d533dcba4c56",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "cb9e2d76-dca8-4fc4-b01b-bebdc5eeb8a4"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "cf1de6f6-0f77-4438-a382-7436b23abb0d"
+        }
+      ],
+      "x": 970,
+      "y": 792,
+      "rtype": "Bot Action",
+      "rsubtype": "Get YouTube Video",
+      "formdata": [
+        "${tempVars.song}",
+        "temp",
+        "Link"
+      ],
+      "formnames": [
+        "searchQuery",
+        "varType",
+        "storeResult"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "7",
+      "guid": "cb9e2d76-dca8-4fc4-b01b-bebdc5eeb8a4",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f5ce8fb5-775b-46fd-a7ab-a68ec3638395"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "262a5e4f-6296-4901-a8a6-d533dcba4c56"
+        }
+      ],
+      "x": 8,
+      "y": 896,
+      "rtype": "Bot Action",
+      "rsubtype": "Get YouTube Video Info",
+      "formdata": [
+        "${tempVars.Link}",
+        "videoThumbnail",
+        "",
+        "temp",
+        "Thumbnail"
+      ],
+      "formnames": [
+        "songURL",
+        "fetchType",
+        "onError",
+        "varType",
+        "storeResult"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "8",
+      "guid": "f5ce8fb5-775b-46fd-a7ab-a68ec3638395",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "4fbd5acf-87e8-4d39-a492-3619224070bb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "cb9e2d76-dca8-4fc4-b01b-bebdc5eeb8a4"
+        }
+      ],
+      "x": 171,
+      "y": 896,
+      "rtype": "Bot Action",
+      "rsubtype": "Get YouTube Video Info",
+      "formdata": [
+        "${tempVars.Link}",
+        "videoLength",
+        "",
+        "temp",
+        "Length"
+      ],
+      "formnames": [
+        "songURL",
+        "fetchType",
+        "onError",
+        "varType",
+        "storeResult"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "9",
+      "guid": "4fbd5acf-87e8-4d39-a492-3619224070bb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ed34f6ea-befb-47cf-8db2-efa61baaf87f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f5ce8fb5-775b-46fd-a7ab-a68ec3638395"
+        }
+      ],
+      "x": 327,
+      "y": 903,
+      "rtype": "Bot Action",
+      "rsubtype": "Play YouTube Video",
+      "formdata": [
+        "${tempVars.Link}",
+        "temp",
+        "Title",
+        "9",
+        "",
+        "11"
+      ],
+      "formnames": [
+        "songURL",
+        "varType",
+        "storeResult",
+        "onSuccess",
+        "onFinish",
+        "onError"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "10",
+      "guid": "ed34f6ea-befb-47cf-8db2-efa61baaf87f",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "737c7d36-898f-498a-9b48-3a991d45c155"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4fbd5acf-87e8-4d39-a492-3619224070bb"
+        }
+      ],
+      "x": 488,
+      "y": 906,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "-Playing... ",
+        "",
+        "",
+        "",
+        "",
+        "🎵**Acum cant...:${tempVars.Title}**🎵\n🎤URL: **${tempVars.Link}**🎤\n📻Length **${tempVars.Length}**📻\nDedicatie de la:**<@${dbsVars.CommandAuthor.id}>**",
+        "",
+        "${tempVars.Thumbnail}",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "11",
+      "guid": "737c7d36-898f-498a-9b48-3a991d45c155",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3f8b18fb-1acf-48c2-9504-1f3513565990"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ed34f6ea-befb-47cf-8db2-efa61baaf87f"
+        }
+      ],
+      "x": 648,
+      "y": 912,
+      "rtype": "Bot Action",
+      "rsubtype": "Stop Action",
+      "formdata": [],
+      "formnames": []
+    },
+    {
+      "type": "response",
+      "name": "12",
+      "guid": "3f8b18fb-1acf-48c2-9504-1f3513565990",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3865f3a0-dcb1-4cb7-a0a6-4a34530d514d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "737c7d36-898f-498a-9b48-3a991d45c155"
+        }
+      ],
+      "x": 809,
+      "y": 913,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "Ce mi-ai dat bossule ca nu exista...",
+        "",
+        "",
+        "",
+        "",
+        "Coaie vezi ce pula mea mi-ai dat ca nu ai dat bine.\nData viitoare daca mai faci d-astea nu-ti mai cant!!!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "13",
+      "guid": "3865f3a0-dcb1-4cb7-a0a6-4a34530d514d",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a533d6a2-b58e-40d1-b2fb-b8d46dcc97b2"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3f8b18fb-1acf-48c2-9504-1f3513565990"
+        }
+      ],
+      "x": 967,
+      "y": 920,
+      "rtype": "Bot Action",
+      "rsubtype": "Stop Action"
+    },
+    {
+      "type": "response",
+      "name": "14",
+      "guid": "a533d6a2-b58e-40d1-b2fb-b8d46dcc97b2",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "31b80aa8-cb68-444b-945a-a4e7fe04e138"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3865f3a0-dcb1-4cb7-a0a6-4a34530d514d"
+        }
+      ],
+      "x": 1126,
+      "y": 924,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "Intra ba pe voice !!!",
+        "",
+        "",
+        "",
+        "",
+        "**Intra sefule pe camera sa-ti cant! Roman frumos ce esti.**",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "15",
+      "guid": "31b80aa8-cb68-444b-945a-a4e7fe04e138",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c1092e10-bf74-4f92-ba7e-af99deedcd57"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a533d6a2-b58e-40d1-b2fb-b8d46dcc97b2"
+        }
+      ],
+      "x": 9,
+      "y": 1012,
+      "rtype": "Bot Action",
+      "rsubtype": "Stop Action",
+      "formdata": [],
+      "formnames": []
+    },
+    {
+      "type": "response",
+      "name": "16",
+      "guid": "c1092e10-bf74-4f92-ba7e-af99deedcd57",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "31b80aa8-cb68-444b-945a-a4e7fe04e138"
+        }
+      ],
+      "x": 178,
+      "y": 1007,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "Deja cant sefule ce ai?",
+        "",
+        "",
+        "",
+        "",
+        "Bossule esti chior? Nu vezi ca deja am o dedicatie, hai ho!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "volume",
+      "guid": "762915c2-5da1-450f-b88a-d290177953c0",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "dc265e3c-6a8b-4a85-b7cd-4275046a0d27"
+          ]
+        }
+      ],
+      "x": 25,
+      "y": 1162
+    },
+    {
+      "type": "command",
+      "name": "leave",
+      "guid": "92e8c409-3d4f-467b-8b0f-9bc87b9fd956",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "3b861bb0-0b8c-479a-8bf5-623f5e9d227d"
+          ]
+        }
+      ],
+      "x": 18,
+      "y": 1266
+    },
+    {
+      "type": "command",
+      "name": "stop",
+      "guid": "ef9fec7b-f840-4d6f-854f-d81778608ca6",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "553f9050-5b94-44f2-9f00-ae1b4ac1122c"
+          ]
+        }
+      ],
+      "x": 14,
+      "y": 1395
+    },
+    {
+      "type": "response",
+      "name": "17",
+      "guid": "dc265e3c-6a8b-4a85-b7cd-4275046a0d27",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Volume",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "89861fd7-75f3-4a93-b691-463001323e63"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "762915c2-5da1-450f-b88a-d290177953c0"
+        }
+      ],
+      "x": 186,
+      "y": 1151,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "Volume",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "18",
+      "guid": "89861fd7-75f3-4a93-b691-463001323e63",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dc265e3c-6a8b-4a85-b7cd-4275046a0d27"
+        }
+      ],
+      "x": 359,
+      "y": 1151,
+      "rtype": "Bot Action",
+      "rsubtype": "Voice Manager",
+      "formdata": [
+        "voiceVolume",
+        "",
+        "",
+        "${tempVars.Volume}"
+      ],
+      "formnames": [
+        "info",
+        "ifTrue",
+        "ifFalse",
+        "volume"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "19",
+      "guid": "3b861bb0-0b8c-479a-8bf5-623f5e9d227d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "92e8c409-3d4f-467b-8b0f-9bc87b9fd956"
+        }
+      ],
+      "x": 183,
+      "y": 1263,
+      "rtype": "Bot Action",
+      "rsubtype": "Voice Manager",
+      "formdata": [
+        "leaveVC",
+        "",
+        "",
+        ""
+      ],
+      "formnames": [
+        "info",
+        "ifTrue",
+        "ifFalse",
+        "volume"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "20",
+      "guid": "553f9050-5b94-44f2-9f00-ae1b4ac1122c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ef9fec7b-f840-4d6f-854f-d81778608ca6"
+        }
+      ],
+      "x": 183,
+      "y": 1383,
+      "rtype": "Bot Action",
+      "rsubtype": "Voice Manager",
+      "formdata": [
+        "stopPlaying",
+        "",
+        "",
+        ""
+      ],
+      "formnames": [
+        "info",
+        "ifTrue",
+        "ifFalse",
+        "volume"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "link",
+      "guid": "dbdf46d0-683b-4e36-a49f-5eda3bab13d9",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "31f67868-9371-4559-9a0f-78f7ec21fde5"
+          ]
+        }
+      ],
+      "x": 27,
+      "y": 1747,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "Link",
+      "guid": "31f67868-9371-4559-9a0f-78f7ec21fde5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dbdf46d0-683b-4e36-a49f-5eda3bab13d9"
+        }
+      ],
+      "x": 196,
+      "y": 1737,
+      "rtype": "Message",
+      "rsubtype": "Inv Link",
+      "formdata": [
+        "852845760017727509",
+        "8",
+        "https://discord.gg/uRXYFczgdZ"
+      ],
+      "formnames": [
+        "clientid",
+        "permInt",
+        "msgText"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "01",
+      "guid": "9e43eefc-84e3-49ae-af98-1f86e6f52df8",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": []
+        }
+      ],
+      "x": 604,
+      "y": 1594,
+      "rtype": "Bot Action",
+      "rsubtype": "Set Bot Activity",
+      "formdata": [
+        "01",
+        "STREAMING",
+        "https://www.youtube.com/watch?v=5qap5aO4i9A"
+      ],
+      "formnames": [
+        "activityname",
+        "activitytype",
+        "streamurl"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "command": [
+    {
+      "name": "ajutor",
+      "perms": [],
+      "actions": [
+        {
+          "name": "help menu",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "!!cutit",
+              "value": "Hai ca sterg chat-ul pentru tine printul meu.",
+              "inline": "true"
+            },
+            {
+              "name": "!!tebatetiganul",
+              "value": "Nu folosi comanda asta ca superi tiganul si te bate, eu te-am avertizat.",
+              "inline": "true"
+            },
+            {
+              "name": "!!play",
+              "value": "Cat de curand seful meu o sa tin si conecerte da momentan nu merge vocea.",
+              "inline": "true"
+            },
+            {
+              "name": "!!starelatigan",
+              "value": "Imi pui stare seful meu, roman galben ce esti.",
+              "inline": "true"
+            },
+            {
+              "name": "!!link",
+              "value": "Link-ul de la discord!! Nu mai genera roman galben alt link  ca iti iei bataie.",
+              "inline": "true"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "0F7330",
+          "title": "Ajut romanul ca e fraier",
+          "url": "",
+          "authorname": "Tiganul",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Ce vrei romanule, de-mi ceri ajutorul. \nNu te descurci in viata asta la nimic.",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "actions": [
+        {
+          "name": "show info",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.DefaultChannel.id}",
+          "messagetext": "Command Author: ${dbsVars.CommandAuthor.displayName}\nTagged author: <@${dbsVars.CommandAuthor.id}>\nYou can insert more values by clicking the \"Insert Variable\" button next to this field!",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "cutit",
+      "perms": [],
+      "actions": [
+        {
+          "name": "verifichatul",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "cutittot",
+          "vartype": "Number",
+          "savevartype": "temp",
+          "param": "1"
+        },
+        {
+          "name": "stergetot",
+          "category": "Channel Action",
+          "type": "Delete All Messages",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "msgcount": "${tempVars.cutittot}"
+        },
+        {
+          "name": "stiu cine a sters boss",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "messagetext": "<@${dbsVars.CommandAuthor.id}> Bravo romanule ca stergi chat-ul, asa sa faci, cu drag tiganul tau favorit.",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "tebatetiganul",
+      "actions": [
+        {
+          "name": "AIAYE",
+          "category": "Message",
+          "type": "Send Image",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "url": "https://www.cugetliber.ro/imagini/original/tiganul-1390392531.jpg",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "Tebatetiganul",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "messagetext": "<@${dbsVars.CommandAuthor.id}> Ce ti-am zis sa nu superi tiganul ? De ce ai invocat tiganul sa te bata?",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "play",
+      "actions": [
+        {
+          "name": "1",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "song",
+          "vartype": "Text",
+          "savevartype": "temp",
+          "param": "0"
+        },
+        {
+          "name": "2",
+          "category": "Message",
+          "type": "if arguments are none",
+          "mes": "🎵**I need a song name!**🎵"
+        },
+        {
+          "name": "3",
+          "category": "Bot Action",
+          "type": "Voice Manager",
+          "info": "isAuthorInVC",
+          "iftrue": "4",
+          "iffalse": "13",
+          "volume": ""
+        },
+        {
+          "name": "4",
+          "category": "Bot Action",
+          "type": "Voice Manager",
+          "info": "IsBotPlayingSong",
+          "iftrue": "15",
+          "iffalse": "4",
+          "volume": ""
+        },
+        {
+          "name": "5",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "🎵Caut sefule...🎵",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "**Caut sefule...** `${tempVars.song}`",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "6",
+          "category": "Bot Action",
+          "type": "Get YouTube Video",
+          "searchquery": "${tempVars.song}",
+          "vartype": "temp",
+          "storeresult": "Link"
+        },
+        {
+          "name": "7",
+          "category": "Bot Action",
+          "type": "Get YouTube Video Info",
+          "songurl": "${tempVars.Link}",
+          "fetchtype": "videoThumbnail",
+          "onerror": "",
+          "vartype": "temp",
+          "storeresult": "Thumbnail"
+        },
+        {
+          "name": "8",
+          "category": "Bot Action",
+          "type": "Get YouTube Video Info",
+          "songurl": "${tempVars.Link}",
+          "fetchtype": "videoLength",
+          "onerror": "",
+          "vartype": "temp",
+          "storeresult": "Length"
+        },
+        {
+          "name": "9",
+          "category": "Bot Action",
+          "type": "Play YouTube Video",
+          "songurl": "${tempVars.Link}",
+          "vartype": "temp",
+          "storeresult": "Title",
+          "onsuccess": "9",
+          "onfinish": "",
+          "onerror": "11"
+        },
+        {
+          "name": "10",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "-Playing... ",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "🎵**Acum cant...:${tempVars.Title}**🎵\n🎤URL: **${tempVars.Link}**🎤\n📻Length **${tempVars.Length}**📻\nDedicatie de la:**<@${dbsVars.CommandAuthor.id}>**",
+          "thumbnail": "",
+          "image": "${tempVars.Thumbnail}",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "11",
+          "category": "Bot Action",
+          "type": "Stop Action"
+        },
+        {
+          "name": "12",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Ce mi-ai dat bossule ca nu exista...",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Coaie vezi ce pula mea mi-ai dat ca nu ai dat bine.\nData viitoare daca mai faci d-astea nu-ti mai cant!!!",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "14",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Intra ba pe voice !!!",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "**Intra sefule pe camera sa-ti cant! Roman frumos ce esti.**",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "15",
+          "category": "Bot Action",
+          "type": "Stop Action"
+        },
+        {
+          "name": "16",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "Deja cant sefule ce ai?",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Bossule esti chior? Nu vezi ca deja am o dedicatie, hai ho!",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "starelatigan",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Status la tigan",
+          "category": "Bot Action",
+          "type": "Set Bot Status",
+          "presencestatus": "dnd"
+        },
+        {
+          "name": "maimulte",
+          "category": "Bot Action",
+          "type": "More Status",
+          "statusoption": "WATCHING",
+          "statustext": "Is la furat, nu ma deranja.\nDaca ai uitat comenzile romanule da un !ajutor.\nIs tigan pur sange, roman galben ce esti.\n"
+        }
+      ]
+    },
+    {
+      "name": "volume",
+      "actions": [
+        {
+          "name": "17",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "Volume",
+          "vartype": "Text",
+          "savevartype": "temp",
+          "param": "0"
+        },
+        {
+          "name": "18",
+          "category": "Bot Action",
+          "type": "Voice Manager",
+          "info": "voiceVolume",
+          "iftrue": "",
+          "iffalse": "",
+          "volume": "${tempVars.Volume}"
+        }
+      ]
+    },
+    {
+      "name": "leave",
+      "actions": [
+        {
+          "name": "19",
+          "category": "Bot Action",
+          "type": "Voice Manager",
+          "info": "leaveVC",
+          "iftrue": "",
+          "iffalse": "",
+          "volume": ""
+        }
+      ]
+    },
+    {
+      "name": "stop",
+      "actions": [
+        {
+          "name": "20",
+          "category": "Bot Action",
+          "type": "Voice Manager",
+          "info": "stopPlaying",
+          "iftrue": "",
+          "iffalse": "",
+          "volume": ""
+        }
+      ]
+    },
+    {
+      "name": "link",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Link",
+          "category": "Message",
+          "type": "Inv Link",
+          "clientid": "852845760017727509",
+          "permint": "8",
+          "msgtext": "https://discord.gg/uRXYFczgdZ"
+        }
+      ]
+    }
+  ]
+}

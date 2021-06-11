@@ -1,0 +1,62 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "A intrat romanul",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "<@${dbsVars.DefaultChannel.id}>",
+          "messagetext": "Ce faci roman galben sa te simti bine in satra.",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "msguser"
+      }
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Hai pleaca du-te dracu",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "<@${dbsVars.DefaultChannel.id}>",
+          "messagetext": "Ce bine ca a plecat romanul.",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [],
+      "var": {}
+    }
+  ]
+}
